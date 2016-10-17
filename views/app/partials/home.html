@@ -1,12 +1,27 @@
-<h1>Liste Utilisateurs</h1>
+<div class="home">
 
-<div ng-repeat="record in records">
-	<p>
-		<strong>{{record.username}}</strong>
-	</p>
+	<div ng-repeat="record in records">
+		<p>
+			<strong>{{record.username}}</strong>
+		</p>
+	</div>
+
+	<ul class="recap">
+		<li><h2>Recap :</h2></li>
+		<li><p>Total</p></li>
+		<li><p>Dernière dépenses</p></li>
+		<li><p>Groupe</p></li>
+		<li><p>Concerné</p></li>
+		<li><p>Motif</p></li>
+	</ul>
+
+	<ul class="name">
+		<li>
+			<a href="#/">User</a>
+		</li>
+		<li><a href="#/">User</a></li>
+		<li><a href="#/">User</a></li>
+		<li><a href="#/">User</a></li>
+		<li><a href="#/">User</a></li>
+	</ul>
 </div>
-
-<form ng-submit="addUser()">
-	<input type="text" placeholder="Utilisateur" ng-model="newUser.username"/><br>
-	<input type="submit" value="Envoyer"/>
-</form>

@@ -1,0 +1,108 @@
+/**** Mixins ****/
+/**** Extend ****/
+.liste, .bar-nav, .onglet, .name, .recap {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #e6e6e6; }
+
+/**** CSS pure ****/
+body {
+  width: 100%;
+  margin: 0; }
+
+* {
+  font-family: sans-serif; }
+
+/**** Header ****/
+.bar-nav {
+  border-bottom: 1px solid #ccc; }
+  .bar-nav li {
+    float: left; }
+  .bar-nav li a {
+    display: block;
+    color: #333;
+    text-align: center;
+    padding: 25px 16px;
+    text-decoration: none; }
+  .bar-nav li a:hover {
+    background-color: #333;
+    color: #fff; }
+
+.title {
+  background-color: #6a6aaf;
+  margin-left: 15px; }
+  .title a {
+    color: #fff !important; }
+
+.log {
+  float: right;
+  margin-right: 15px; }
+
+.main {
+  display: flex;
+  justify-content: center; }
+
+.onglet {
+  width: 80%;
+  border-radius: 4px;
+  background-color: #6a6aaf;
+  box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.85);
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .onglet div li {
+    float: left; }
+  .onglet div li a {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 25px 16px;
+    text-decoration: none; }
+  .onglet div li a:hover {
+    background-color: #333;
+    color: #fff; }
+
+/**** Home ****/
+.container {
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center; }
+
+.home {
+  width: 80%;
+  border: 1px solid #ccc; }
+
+.name {
+  float: left; }
+  .name li {
+    display: flex;
+    align-items: center;
+    justify-content: space-around; }
+  .name li a {
+    display: block;
+    color: #333;
+    text-align: center;
+    padding: 15px 16px;
+    text-decoration: none; }
+  .name li a:hover {
+    background-color: #6a6aaf;
+    color: #fff;
+    box-shadow: 0px 0px 23px -1px rgba(0, 0, 0, 0.65); }
+
+.recap {
+  background-color: #fff;
+  border-bottom: 1px solid #ccc; }
+  .recap li {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #333;
+    text-align: center;
+    padding: 10px 16px;
+    text-decoration: none; }
+
+/*# sourceMappingURL=app.css.map */

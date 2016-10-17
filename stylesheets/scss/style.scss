@@ -1,0 +1,139 @@
+$font-gen: sans-serif;
+$white: #fff;
+$border-grey: #ccc;
+$blue: #6a6aaf;
+$semi-black: #333;
+
+/**** Mixins ****/
+
+@mixin width($width) {
+  width: $width;
+}
+
+/**** Extend ****/
+
+.liste {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #e6e6e6;
+}
+
+/**** CSS pure ****/
+body {
+	width: 100%;
+	margin: 0;
+}
+* {
+	font-family: $font-gen;
+}
+
+/**** Header ****/
+
+.bar-nav {
+    @extend .liste;
+    border-bottom: 1px solid $border-grey;
+    li {
+        float: left;
+    }
+    li a {
+        display: block;
+        color: $semi-black;
+        text-align: center;
+        padding: 25px 16px;
+        text-decoration: none;
+    }
+    li a:hover {
+        background-color: $semi-black;
+        color: $white;
+    }
+}
+.title {
+	background-color: $blue;
+	margin-left: 15px;
+    a {
+        color: $white !important;
+    }
+}
+.log {
+	float: right;
+	margin-right: 15px
+}
+.main {
+    display: flex;
+    justify-content: center;
+}
+.onglet {
+    @extend .liste;
+    @include width(80%);
+    border-radius: 4px;
+    background-color: $blue;
+    box-shadow: 0px 0px 10px -1px rgba(0,0,0,0.85);
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    div li {
+        float: left;
+    }
+    div li a {
+        display: block;
+        color: $white;
+        text-align: center;
+        padding: 25px 16px;
+        text-decoration: none;
+    }
+    div li a:hover {
+        background-color: $semi-black;
+        color: $white;
+    }
+}
+
+/**** Home ****/
+
+.container {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+.home {
+	@include width(80%);
+    border: 1px solid $border-grey;
+}
+.name {
+    @extend .liste;
+    float: left;
+    li {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    li a {
+        display: block;
+        color: $semi-black;
+        text-align: center;
+        padding: 15px 16px;
+        text-decoration: none;
+    }
+    li a:hover {
+        background-color: #6a6aaf;
+        color: $white;
+        box-shadow: 0px 0px 23px -1px rgba(0,0,0,0.65);
+    }
+}
+.recap {
+    @extend .liste;
+    background-color: #fff;
+    border-bottom: 1px solid $border-grey;
+    li {
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-around;
+        color: $semi-black;
+        text-align: center;
+        padding: 10px 16px;
+        text-decoration: none;
+    }
+}

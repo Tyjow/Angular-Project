@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Angular Project</title>
-	<link rel="stylesheet" type="text/css" href="assets/bootstrap/dist/css/bootstrap.min.css">
+	<title>AngularCount</title>
+	<!-- <link rel="stylesheet" type="text/css" href="assets/bootstrap/dist/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/app.css">
+
 
 	<script type="text/javascript" src="assets/angular/angular.min.js"></script>
 	<script type="text/javascript" src="assets/angular-route/angular-route.min.js"></script>
@@ -14,10 +16,27 @@
 
 <body ng-app="proApp">
 
-	<div class="navbar navbar-default">
-		<div class="navbar-header">
-			<a href="#" class="navbar-brand">Angular Project</a>
-		</div>
+	<ul class="bar-nav">
+	  <li class="title"><a href="#">AngularCount</a></li>
+	  <div class="log">
+		  <li><a href="#">Sign In</a></li>
+		  <li><a href="#">Sign Up</a></li>
+	  </div>
+	</ul>
+
+	<div class="main">
+		<ul class="onglet">
+			<div>
+				<li><a href="#"><i class="fa fa-money" aria-hidden="true"></i>Dépenses</a></li>
+				<li><a href="#">Equilibre</a></li>
+				<li><a href="#">Partage</a></li>
+				<li><a href="#">Config</a></li>
+			</div>
+			<form ng-submit="addUser()">
+				<input type="text" placeholder="Utilisateur" ng-model="newUser.username"/><br>
+				<input type="submit" value="Ajout Utilisateur"/>
+			</form>
+		</ul>
 	</div>
 
 	<div class="container" ng-view></div>
