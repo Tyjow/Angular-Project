@@ -1,27 +1,25 @@
 <div class="home">
 
-	<div ng-repeat="record in records">
-		<p>
-			<strong>{{record.username}}</strong>
-		</p>
-	</div>
-
 	<ul class="recap">
-		<li><h2>Recap :</h2></li>
-		<li><p>Total</p></li>
-		<li><p>Dernière dépenses</p></li>
-		<li><p>Groupe</p></li>
-		<li><p>Concerné</p></li>
-		<li><p>Motif</p></li>
+		<li>
+			<h3>Recap :</h3>
+			<p>Total</p>
+			<p>Dernière<br>
+			dépenses</p>
+			<p>Groupe</p>
+			<p>Concerné</p>
+			<p>Motif</p>
+		</li>
 	</ul>
 
-	<ul class="name">
+	<ul ng-repeat="rec in recs" class="name">
 		<li>
-			<a href="#/">User</a>
+			<a href="#/">{{rec.username}}</a>
+			<p class="plus">+100 €</p>
+			<p class="moins">-50 €</p>
+			<p>{{rec.usergroup}}</p>
+			<p>Toto</p>
+			<p>course</p>
 		</li>
-		<li><a href="#/">User</a></li>
-		<li><a href="#/">User</a></li>
-		<li><a href="#/">User</a></li>
-		<li><a href="#/">User</a></li>
 	</ul>
 </div>

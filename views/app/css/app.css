@@ -1,6 +1,6 @@
 /**** Mixins ****/
 /**** Extend ****/
-.liste, .bar-nav, .onglet, .name, .recap {
+.liste, .bar-nav, .onglet, .recap {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -10,7 +10,11 @@
 /**** CSS pure ****/
 body {
   width: 100%;
-  margin: 0; }
+  margin: 0;
+  background-image: url("../img/white.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover; }
 
 * {
   font-family: sans-serif; }
@@ -39,6 +43,8 @@ body {
 .log {
   float: right;
   margin-right: 15px; }
+  .log li a i {
+    margin-right: 5px; }
 
 .main {
   display: flex;
@@ -51,7 +57,7 @@ body {
   box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.85);
   margin-top: 30px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center; }
   .onglet div li {
     float: left; }
@@ -61,9 +67,25 @@ body {
     text-align: center;
     padding: 25px 16px;
     text-decoration: none; }
+  .onglet div li a i {
+    margin-right: 5px; }
   .onglet div li a:hover {
     background-color: #333;
     color: #fff; }
+  .onglet form .butt {
+    color: #fff;
+    text-align: center;
+    padding: 10px 10px;
+    text-decoration: none;
+    background-color: #333;
+    border-radius: 4px;
+    box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.65); }
+  .onglet form .butt:hover {
+    color: #333;
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.65);
+    transition: all 0.35s; }
 
 /**** Home ****/
 .container {
@@ -74,35 +96,117 @@ body {
 
 .home {
   width: 80%;
-  border: 1px solid #ccc; }
+  border: 1px solid #ccc;
+  background-color: #fff;
+  margin-bottom: 30px; }
 
 .name {
-  float: left; }
+  padding: 10px; }
   .name li {
+    list-style-type: none;
+    margin: 10px;
     display: flex;
-    align-items: center;
-    justify-content: space-around; }
+    justify-content: space-between;
+    background-color: #e6e6e6;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc; }
   .name li a {
-    display: block;
-    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
     text-align: center;
-    padding: 15px 16px;
-    text-decoration: none; }
+    padding: 25px 20px;
+    text-decoration: none;
+    background-color: #333;
+    box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.65); }
+  .name li p {
+    padding: 10px 25px;
+    position: relative; }
+  .name li p:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-left: 1px solid #999; }
+  .name li .plus {
+    color: green; }
+  .name li .moins {
+    color: red; }
   .name li a:hover {
     background-color: #6a6aaf;
     color: #fff;
-    box-shadow: 0px 0px 23px -1px rgba(0, 0, 0, 0.65); }
+    box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.65);
+    transition: all 0.35s; }
 
 .recap {
-  background-color: #fff;
+  background-color: #e6e6e6;
   border-bottom: 1px solid #ccc; }
   .recap li {
-    display: inline-flex;
+    list-style-type: none;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    color: #333; }
+  .recap li h3 {
+    display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-around;
-    color: #333;
     text-align: center;
-    padding: 10px 16px;
+    padding: 0px 10px;
     text-decoration: none; }
+  .recap li p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0px 30px;
+    text-decoration: none; }
+
+/**** Modal ****/
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */ }
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%; }
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold; }
+  .close .close:hover,
+  .close .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer; }
+
+/**** Footer ****/
+footer {
+  background-color: #e6e6e6;
+  border-top: 1px solid #ccc;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  footer p {
+    color: #333; }
 
 /*# sourceMappingURL=app.css.map */
