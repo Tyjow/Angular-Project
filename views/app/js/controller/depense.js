@@ -1,5 +1,11 @@
-app.controller('DepenseCtrl', function($scope, $http){
-	$scope.recs = $http.get('depense.json').then(function(rec) {
-        $scope.recs = rec.data.records;
-    });
+app.controller('DepenseCtrl', function($scope, User){
+	var depenses = User.get()
+	.then(function (data) {
+		$scope.depenses = data;
+	});
+	User.getFromId(67).then(function(obj){
+		$scope.obj = obj;
+		
+		console.log($scope.obj);
+	});
 });

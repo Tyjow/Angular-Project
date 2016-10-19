@@ -1,13 +1,28 @@
 <div class="home">
 
-	<ul ng-repeat="rec in recs" class="name">
+	<ul class="recap">
 		<li>
-			<!-- <a href="#/">{{rec.username}}</a> -->
-			<p class="plus">{{rec.Montant}} €</p>
-			<p class="moins">-50 €</p>
-			<p>{{rec.usergroup}}</p>
-			<p>Toto</p>
-			<p>course</p>
+			<h3>Depense :</h3>
+			<p>Montant</p>
+			<p>Payeur</p>
+			<p>Concernés</p>
+			<p>Date</p>
+			<p>Nombre de<br>concernés</p>
+			<p>Groupe</p>
+			<p>Description</p>
+		</li>
+	</ul>
+
+	<ul ng-repeat="depense in depenses.records" class="name">
+		<li>
+			<a href="#/">{{depense.username}}</a>
+			<p class="plus">{{depense.Montant}} €</p>
+			<p class="moins">{{depense.Payeur}}</p>
+			<p>Concernés</p>
+			<p>Date</p>
+			<p>Nombre de<br>concernés</p>
+			<p>{{depense.usergroup}}</p>
+			<p>Description</p>
 		</li>
 	</ul>
 
