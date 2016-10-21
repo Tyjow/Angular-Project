@@ -2,10 +2,9 @@ app.factory('User', function($http, $q){
 	
 	var factory = {
 		call: function() {
-		        var users = $http.get('users.json'),
-		        	depense = $http.get('depense.json');
-
-		        return $q.all([users,depense]);
+	        	var users = $http.get('users.json'),
+	        		depense = $http.get('depense.json');
+	        	return $q.all([users,depense]);
       	},
       	getFromId : function(id) {
       		var deferred = $q.defer();

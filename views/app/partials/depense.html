@@ -13,12 +13,12 @@
 		</li>
 	</ul>
 
-	<ul ng-repeat="depense in depenses.records" class="name">
+	<ul ng-repeat="depense in depenses" class="name">
 		<li>
 			<a href="#/">User</a>
 			<p class="plus">{{depense.Montant}} €</p>
 			<p class="moins">{{depense.Payeur}}</p>
-			<p>Concernés</p>
+			<p>{{depense.Concernes}}</p>
 			<p>Date</p>
 			<p>Nombre de<br>concernés</p>
 			<p>{{depense.usergroup}}</p>
