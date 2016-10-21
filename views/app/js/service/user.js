@@ -1,32 +1,11 @@
 app.factory('User', function($http, $q){
 	
 	var factory = {
-		single : false,
 		call: function() {
-	        var deferred = $q.defer();
-	        if (factory.single !== false){
-				deferred.resolve(factory.single);
-			}
-			else {
-		        var users = $http.get('users.json').success(function(data) {
-			        factory.single = data;
-			        console.log("users");
-			        console.log(data);
-			        deferred.resolve(factory.single);
-			    }),
-		        	depense = $http.get('depense.json').success(function(data) {
-			        factory.single = data;
-			        console.log("depense");
-			        console.log(data);
-			        deferred.resolve(factory.single);
-			    });	        	
-		        /*$q.all([users,depense]).then(function(data){
-		        	console.log('Both promises have resolved', data);
-		        });*/
-			}
+		        var users = $http.get('users.json'),
+		        	depense = $http.get('depense.json');
 
-		console.log(deferred.promise);
-        return deferred.promise;
+		        return $q.all([users,depense]);
       	},
       	getFromId : function(id) {
       		var deferred = $q.defer();
