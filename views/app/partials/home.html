@@ -12,12 +12,12 @@
 		</li>
 	</ul>
 
-	<ul ng-repeat="rec in recs" class="name">
+	<ul ng-repeat="user in users" class="name">
 		<li>
-			<a href="#/">{{rec.username}}</a>
+			<a href="#/">{{aUsers[user.Id]}}</a>
 			<p class="plus">+100 €</p>
 			<p class="moins">-50 €</p>
-			<p>{{rec.usergroup}}</p>
+			<p>{{user.usergroup}}</p>
 			<p>Toto</p>
 			<p>course</p>
 		</li>
