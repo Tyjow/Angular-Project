@@ -3,8 +3,7 @@
 	<ul class="recap">
 		<li>
 			<h3>Depense :</h3>
-			<p>Montant</p>
-			<p>Payeur</p>
+			<p>Montant<br>Positif</p>
 			<p>Concernés</p>
 			<p>Date</p>
 			<p>Nombre de<br>concernés</p>
@@ -15,10 +14,10 @@
 
 	<ul ng-repeat="depense in depenses" class="name">
 		<li>
-			<a href="#/">{{aDepense[depense.Payeur]}}</a>
+			<a href="#/">{{aUsers[depense.Payeur].username}}</a>
 			<p class="plus">{{depense.Montant}} €</p>
-			<p class="moins">{{aUsers[depense.Payeur]}}</p>
-			<p>{{aUsers[depense.Concernes]}}</p>
+			<p>{{tmpFinal[depense.Id]}}</p>
+			<p class="moins">{{depense.Concernes}}</p>
 			<p>Date</p>
 			<p>Nombre de<br>concernés</p>
 			<p>{{depense.usergroup}}</p>
