@@ -14,10 +14,10 @@
 
 	<ul ng-repeat="depense in depenses" class="name">
 		<li>
-			<a href="#/">{{aUsers[depense.Payeur].username}}</a>
+			<a href="#/">{{aUsers[depense.Payeur]}}</a>
 			<p class="plus">{{depense.Montant}} €</p>
-			<p>{{tmpFinal[depense.Id]}}</p>
-			<p class="moins">{{depense.Concernes}}</p>
+			<p>{{aConcernesFinal[depense.Id]}}</p>
+			<!-- <p class="moins">{{depense.Concernes}}</p> -->
 			<p>Date</p>
 			<p>Nombre de<br>concernés</p>
 			<p>{{depense.usergroup}}</p>
