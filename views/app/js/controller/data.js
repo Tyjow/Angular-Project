@@ -9,10 +9,7 @@ app.controller('DataCtrl', function($rootScope, $scope, User, Depense){
         angular.forEach($scope.users, function(value, key) {
         	key = value.Id;
 			this[key] = value.username;
-			//console.log(key + ": "+ value.username);
-			//console.log($rootScope.aUsers[key]);
 		}, $rootScope.aUsers);
-		//console.log($rootScope.aUsers);
 	});
 	Depense.call().then(function(value){
 		

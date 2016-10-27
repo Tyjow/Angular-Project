@@ -23,35 +23,3 @@ server.listen(app.get('port'), function() {
 	console.log('✔︎︎ Express server on http://localhost:%d/'.blue, app.get('port'));
 });
 
-
-var mysql      = require('mysql');
-var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : 'facesimplon',
-  database : 'compta'
-});
-
-connection.connect();
-
-connection.query('SELECT * FROM depenses', function(err, rows, fields) {
-	if (err) {
-		console.log(err);
-		connection.end();
-		return;
-	}
-
-  	if (rows.length > 0)  { 
-		var firstResult = rows[0];
-		console.log('id: ' + firstResult['id']);
-		console.log('montant: ' + firstResult['montant']);
-		console.log('name: ' + firstResult['name']);
-    } 
-    else {
-    	console.log("Pas de données");
-    }
-
-});
-
-connection.end();
-
