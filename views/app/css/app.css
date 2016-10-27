@@ -1,5 +1,9 @@
 /**** Mixins ****/
 /**** Extend ****/
+.corner-round-right, .name .bloc a {
+  border-top-right-radius: 10vw;
+  border-bottom-right-radius: 10vw; }
+
 .liste, .bar-nav, .onglet, .recap {
   list-style-type: none;
   margin: 0;
@@ -101,40 +105,33 @@ body {
   margin-bottom: 30px; }
 
 .name {
+  display: flex;
   padding: 10px; }
-  .name li {
-    list-style-type: none;
+  .name .bloc {
     margin: 10px;
     display: flex;
-    justify-content: space-between;
     background-color: #e6e6e6;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc; }
-  .name li a {
+    flex-direction: column;
+    align-items: center;
+    width: 20vw; }
+  .name .bloc a {
     display: flex;
     justify-content: center;
     align-items: center;
     color: #fff;
     text-align: center;
-    padding: 25px 20px;
     text-decoration: none;
     background-color: #333;
-    box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.65); }
-  .name li p {
+    box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.65);
+    width: 10vw; }
+  .name p {
     padding: 10px 25px;
     position: relative; }
-  .name li p:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    border-left: 1px solid #999; }
-  .name li .plus {
+  .name .plus {
     color: green; }
-  .name li .moins {
+  .name .moins {
     color: red; }
-  .name li a:hover {
+  .name .bloc a:hover {
     background-color: #6a6aaf;
     color: #fff;
     box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.65);

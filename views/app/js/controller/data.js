@@ -4,10 +4,10 @@ app.controller('DataCtrl', function($rootScope, $scope, User, Depense){
 		$scope.users = value.records;
 		$rootScope.aUsers = [];
         /*for($user in $scope.users){
-            $scope.aUsers[$scope.users[$user].Id] = $scope.users[$user].username;
+            $scope.aUsers[$scope.users[$user].id] = $scope.users[$user].username;
         }*/
         angular.forEach($scope.users, function(value, key) {
-        	key = value.Id;
+        	key = value.id;
 			this[key] = value.username;
 		}, $rootScope.aUsers);
 	});
@@ -24,7 +24,7 @@ app.controller('DataCtrl', function($rootScope, $scope, User, Depense){
 
         for($depense in $scope.depenses) {
             //On crée le tableau à explorer (le split est important car il permet de rendre ce tableau exploitable pour la boucle suivante)
-            $scope.aConcernes[$depense] = $scope.depenses[$depense].Concernes.split(',');
+            $scope.aConcernes[$depense] = $scope.depenses[$depense].concernes.split(',');
         }
         
         //le $scope.aConcernes est un tableau qui contient des tableaux (2 niveaux, donc 2 boucles for)
@@ -42,7 +42,7 @@ app.controller('DataCtrl', function($rootScope, $scope, User, Depense){
         
         //Cette boucle est pour créer un tableau qui a pour clés les ID des dépenses et pour valeur les lignes créer plus tôt.
         for($depense in $scope.depenses) {
-            $scope.aConcernesFinal[$scope.depenses[$depense].Id] = $scope.aConcernesTrue[$depense];
+            $scope.aConcernesFinal[$scope.depenses[$depense].id] = $scope.aConcernesTrue[$depense];
         }
 	});
 });

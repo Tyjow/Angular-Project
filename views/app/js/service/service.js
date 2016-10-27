@@ -8,7 +8,23 @@ app.factory('User', function($http, $q){
 				deferred.resolve(factory.single);
 			}
 			else {
-	        	var users = $http.get('users.json')
+
+				/*var users = {
+					 method: 'GET',
+					 url: 'http://compta/users',
+				}
+
+				$http(users).then(function(data){
+						console.log("SUCCESS");
+						console.log(data);
+					}, 
+					function(data){
+						console.error("ERROR");
+						console.error(data);
+					}
+				);*/
+
+	        	var users = $http.get('http://compta/users')
 		        	.success(function(data) {
 		        	factory.single = data;
 		        	deferred.resolve(factory.single);
@@ -40,7 +56,7 @@ app.factory('Depense', function($http, $q){
 				deferred.resolve(factory.single);
 			}
 			else {
-	        	var depense = $http.get('depense.json')
+	        	var depense = $http.get('http://compta/depenses')
 		        	.success(function(data) {
 		        	factory.single = data;
 		        	deferred.resolve(factory.single);
