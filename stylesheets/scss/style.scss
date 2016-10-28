@@ -5,6 +5,7 @@ $border-dark-grey: #999;
 $blue: #6a6aaf;
 $semi-black: #333;
 $grey: #e6e6e6;
+$orange: #ff9933;
 
 /**** Mixins ****/
 
@@ -103,7 +104,7 @@ body {
         background-color: $semi-black;
         color: $white;
     }
-    form .butt {
+    .butt {
         color: $white;
         text-align: center;
         padding: 10px 10px;
@@ -112,7 +113,7 @@ body {
         border-radius: 4px;
         box-shadow: 0px 0px 10px -1px rgba(0,0,0,0.65);
     }
-    form .butt:hover {
+    .butt:hover {
         color: $semi-black;
         background-color: $white;
         cursor: pointer;
@@ -136,17 +137,15 @@ body {
     margin-bottom: 30px;
 }
 .name {
-    display: flex;
-    padding: 10px;
+    width: 20%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding: 15px;
+    margin: 12px;
+    background-color: $grey;
+    text-align: center;
     .bloc {
-        margin: 10px;
-        display: flex;
-        background-color: $grey;
-        flex-direction: column;
-        align-items: center;
-        @include width(20vw);
-    }
-    .bloc a {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -156,8 +155,43 @@ body {
         text-decoration: none;
         background-color: $semi-black;
         box-shadow: 0px 0px 10px -1px rgba(0,0,0,0.65);
-        @include width(10vw);
-        @extend .corner-round-right;
+        @include width(100%);
+        height: 10vh;
+    }
+    .dropdown {
+        border-radius: 4px;
+        background-color: $blue;
+        box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.85);
+        color: $white;
+        margin: 10px 0px;
+        padding: 10px 0px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .dropdown:hover {
+        background-color: $semi-black;
+        cursor: pointer;
+    }
+    .dropdown:after {
+        content: "\25BC";
+        display: block;
+        font-size: .8em;
+    }
+    .drop-nav {
+        width:auto;
+        height: auto;
+        display: none;
+        position: relative;
+        background-color: $white;
+        padding:1em;
+        box-shadow: 2px 1px 2px 0px #9b9b9b;
+    }
+    .drop-nav > p {
+        color: $semi-black;
+    }
+    a {
+        text-decoration: none;
     }
     p {
         padding: 10px 25px;
@@ -169,11 +203,22 @@ body {
     .moins {
         color: red;
     }
-    .bloc a:hover {
+    .bloc:hover {
         background-color: #6a6aaf;
         color: $white;
         box-shadow: 0px 0px 10px -1px rgba(0,0,0,0.65);
         transition: all 0.35s;
+    }
+    .descrip {
+        height: 15vh;
+        overflow-y: scroll;
+        background-color: #fff;
+        text-align: center;
+        box-shadow: inset 2px 2px 4px rgba(0,0,0,0.4);
+    }
+    .descrip > p {
+        padding: 0;
+        font-size: .8em;
     }
 }
 .recap {
@@ -215,25 +260,117 @@ body {
     width: 100%; /* Full width */
     height: 100%; /* Full height */
 }
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    @include width(50%);
-}
+.popover {
+    position: absolute;
+    top: 26%;
+    left: 70%;
+    z-index: 1;
+    display: none;
+    max-width: 276px;
+    font-size: 14px;
+    background-color: $white;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    line-break: auto;
 
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    .close:hover,
-    .close:focus {
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
+    .popover-title {
+        padding: 8px 14px;
+        margin: 0;
+        font-size: 14px;
+        background-color: $grey;
+        border-bottom: 1px solid $border-grey;
+        border-radius: 5px 5px 0 0;
+        display: flex;
+        justify-content: space-between;
+
+        h4 {
+            margin: 0;
+            color: $semi-black;
+        }
     }
+}
+.popover-content {
+  padding: 9px 14px;
+    .sub {
+        display: inline-block;
+        padding: 6px 12px;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 1.42857143;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -ms-touch-action: manipulation;
+          touch-action: manipulation;
+        cursor: pointer;
+        -webkit-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+        background-image: none;
+        border: 1px solid transparent;
+        border-radius: 4px;
+    }
+    .sub-butt {
+        color: $white;
+        text-align: center;
+        padding: 5px 10px;
+        text-decoration: none;
+        background-color: $semi-black;
+        border-radius: 4px;
+        box-shadow: 0px 0px 10px -1px rgba(0,0,0,0.65);
+        margin: 5px;
+    }
+    .sub-butt:hover {
+        background-color: $blue;
+        transition: all 0.35s;
+    }
+}
+.popover > .arrow,
+.popover > .arrow:after {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+}
+.popover > .arrow {
+    border-width: 11px;
+}
+.popover > .arrow:after {
+    content: "";
+    border-width: 10px;
+}
+.popover.bottom > .arrow {
+    top: -11px;
+    left: 50%;
+    margin-left: -11px;
+    border-top-width: 0;
+    border-bottom-color: $grey;
+    border-bottom-color: $grey;
+}
+.popover.bottom > .arrow:after {
+    top: 1px;
+    margin-left: -10px;
+    content: " ";
+    border-top-width: 0;
+    border-bottom-color: $grey;
+}
+.close {
+    color: $border-dark-grey;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0;
+    cursor: pointer;
+}
+.close:hover,
+.close:focus {
+    color: $orange;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 /**** Footer ****/

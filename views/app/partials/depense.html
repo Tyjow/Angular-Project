@@ -12,17 +12,19 @@
 		</li>
 	</ul>
 
-	<ul ng-repeat="depense in depenses" class="name">
-		<li>
-			<a href="#/">{{aUsers[depense.payeur]}}</a>
-			<p class="plus">{{depense.montant}} €</p>
+	<div ng-repeat="depense in depenses" class="name">
+		<a href="#/"><div class="bloc">{{aUsers[depense.payeur]}}</div></a>
+		<p class="plus">{{depense.montant}} €</p>
+		<div class="dropdown">Voir les concernés</div>
+		<div class="drop-nav" slidetoggle>
 			<p>{{aConcernesFinal[depense.id]}}</p>
-			<!-- <p class="moins">{{depense.Concernes}}</p> -->
-			<p>Date</p>
-			<p>Nombre de<br>concernés</p>
-			<p>{{depense.usergroup}}</p>
-			<p>Description</p>
-		</li>
-	</ul>
+		</div>
+		<p class="moins">{{depense.Concernes}}</p>
+		<p>{{depense.date}}</p>
+		<p>{{depense.usergroup}}</p>
+		<div class="descrip">
+			<p>{{depense.description}}</p>
+		</div>
+	</div>
 
 </div>

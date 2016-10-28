@@ -13,13 +13,13 @@
 	</ul>
 
 	<div ng-repeat="user in users" class="name">
-		<div class="bloc">
-			<a href="#/">{{aUsers[user.id]}}</a>
-			<p class="plus">+100 €</p>
-			<p class="moins">-50 €</p>
-			<p>{{user.usergroup}}</p>
-			<p>Toto</p>
-			<p>course</p>
+		<a href="#/"><div class="bloc">{{aUsers[user.id]}}</div></a>
+		<p class="plus">+100 €</p>
+		<p class="moins">-50 €</p>
+		<p>{{user.usergroup}}</p>
+		<p>Toto</p>
+		<div class="descrip">
+			<p>description</p>
 		</div>
 	</div>
 </div>
